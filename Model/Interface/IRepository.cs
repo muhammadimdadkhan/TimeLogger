@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 
 namespace Model.Interface
 {
-    public interface IRepository<T> where T : BasicEntity
+    public interface IRepository : IRepositoryReadOnly
     {
-        T GetById(int id);
-        IEnumerable<T> GetAll();
-        void Insert(T entity, EventType eventType);
-        void Update(T entity, EventType eventType);
-        void Delete(int id, EventType eventType);
-        void AddRange(IEnumerable<T> entities, EventType eventType);
-        void UpdateRange(IEnumerable<T> entities, EventType eventType);
-        void DeleteRange(IEnumerable<int> ids, EventType eventType);
+        void InsertModel<T>(T model) where T : class;
+        void ResetChangeTracker();
+        void DeleteModel<T>(int modelId) where T : class;
+        void DeleteModel<T>(string modelId) where T : class;
+        int Save();
+        Task<int> SaveAsync();
+        void ExecuteRawSql(string sql);
+        Task<IEnumerable<T>> ExecuteRawSqlAsync<T>(string sql) where T : class;
+        void AddRange<T>(IEnumerable<T> objects, bool IsAuditable = true) where T : class;
+        void RemoveRange<T>(IEnumerable<T> objects, bool IsAuditable = true) where T : class;
+        void UpdateRange<T>(IEnumerable<T> objects, bool IsAuditable = true) where T : class;
     }
 }

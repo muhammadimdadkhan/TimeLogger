@@ -1,4 +1,7 @@
-﻿using Common.ResponseModels;
+﻿using Common.Enums;
+using Common.ResponseModels;
+using Model.Interface;
+using Model.ModelSql;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -10,9 +13,30 @@ namespace Service.Service
 {
     public class AuthenticationService : IAuthenticationService
     {
+        private readonly IRepository _iRepository;
+        public AuthenticationService(
+            IRepository repository
+            )
+        {
+            _iRepository = repository;
+        }
         Response IAuthenticationService.Login(string username, string password)
         {
-            throw new NotImplementedException();
+            Response response = null;
+
+            User user = _iRepository.GetQueryableWithOutTracking<User>().Where(x => x.Username.Equals(username) && x.Password.Equals(password)).FirstOrDefault();
+            if (user != null)
+            {
+                response = new Response()
+                {
+                    Data = user,
+                    Message = "Success",
+                    Status = ResponseStatus.Success
+                };
+                response.Data = user;
+
+            }
+            return response;
         }
     }
 }

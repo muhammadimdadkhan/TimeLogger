@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Model.Interface;
 using Service.Interface;
 using Service.Service;
 using System;

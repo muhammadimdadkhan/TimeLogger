@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Common.ResponseModels
 {
-    public class Response
+    public class ResponseListData
     {
         public string Message { get; set; }
         public ResponseStatus Status { get; set; }
-        public object Data { get; set; }
+        public List<object> Data { get; set; }
     }
 }

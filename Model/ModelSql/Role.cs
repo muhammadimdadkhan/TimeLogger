@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Model.ModelSql
 {
     // Role entity model
-    public class Role : BasicEntity
+    public class Role : RoleEntity
     {
         public string Name { get; set; }
 

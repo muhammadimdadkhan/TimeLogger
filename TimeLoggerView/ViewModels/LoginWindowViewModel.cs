@@ -15,5 +15,6 @@ namespace TimeLoggerView.ViewModels
         {
             _authenticationService = authenticationService;
         }
+
     }
 }

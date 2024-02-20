@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace Model.ModelSql
 {
-    public class Permission : BasicEntity
+    public class Permission : RoleEntity
     {
         public string Name { get; set; }
         public string? Description { get; set; }
+        //public bool Add { get; set; }
+        //public bool Update { get; set; }
+        //public bool Delete { get; set; }
+        //public bool View { get; set; }
+    
     }
 }
