@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="icons8-compass-100.png" />
+    <None Remove="icons8-game-controller-90.png" />
+    <None Remove="icons8-globe-100.png" />
+    <None Remove="icons8-graduation-cap-90.png" />
+    <None Remove="icons8-music-128.png" />
+    <None Remove="icons8-play-button-100.png" />
+    <None Remove="icons8-report-100.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Images\" />
   </ItemGroup>
 
@@ -24,6 +34,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons8-compass-100.png" />
+    <Resource Include="icons8-game-controller-90.png" />
+    <Resource Include="icons8-globe-100.png" />
+    <Resource Include="icons8-graduation-cap-90.png" />
+    <Resource Include="icons8-music-128.png" />
+    <Resource Include="icons8-play-button-100.png" />
+    <Resource Include="icons8-report-100.png" />
   </ItemGroup>
 
 </Project>
