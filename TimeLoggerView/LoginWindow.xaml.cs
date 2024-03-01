@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Common.ResponseModels;
+using Microsoft.Extensions.DependencyInjection;
 using Model.Interface;
 using Service.Interface;
 using Service.Service;
@@ -37,7 +38,22 @@ namespace TimeLoggerView
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            _authenticationService.Login(txtUser.Text,txtPass.Password);
+           Response response =  _authenticationService.Login(txtUser.Text,txtPass.Password);
+
+            if (response != null)
+            {
+                MainDashboardView mainDashboard = new MainDashboardView();
+                mainDashboard.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect Password or Username");
+            }
+
+            
+            
+            
         }
 
         private void ResetTxt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

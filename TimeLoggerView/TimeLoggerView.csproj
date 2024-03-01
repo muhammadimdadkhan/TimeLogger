@@ -9,13 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="icons8-compass-100.png" />
-    <None Remove="icons8-game-controller-90.png" />
-    <None Remove="icons8-globe-100.png" />
-    <None Remove="icons8-graduation-cap-90.png" />
-    <None Remove="icons8-music-128.png" />
-    <None Remove="icons8-play-button-100.png" />
-    <None Remove="icons8-report-100.png" />
+    <None Remove="Home.png" />
+    <None Remove="icons8-audit-100.png" />
+    <None Remove="icons8-bell-100.png" />
+    <None Remove="icons8-project-96.png" />
+    <None Remove="icons8-report-90.png" />
+    <None Remove="icons8-request-service-96.png" />
+    <None Remove="icons8-time-100.png" />
+    <None Remove="icons8-user-100.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,13 +38,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="icons8-compass-100.png" />
-    <Resource Include="icons8-game-controller-90.png" />
-    <Resource Include="icons8-globe-100.png" />
-    <Resource Include="icons8-graduation-cap-90.png" />
-    <Resource Include="icons8-music-128.png" />
-    <Resource Include="icons8-play-button-100.png" />
-    <Resource Include="icons8-report-100.png" />
+    <Resource Include="./Images/Home.png" />
+    <Resource Include="./Images/icons8-audit-100.png" />
+    <Resource Include="./Images/icons8-bell-100.png" />
+    <Resource Include="./Images/icons8-project-96.png" />
+    <Resource Include="./Images/icons8-report-90.png" />
+    <Resource Include="./Images/icons8-request-service-96.png" />
+    <Resource Include="./Images/icons8-time-100.png" />
+    <Resource Include="./Images/icons8-user-100.png" />
   </ItemGroup>
 
 </Project>
