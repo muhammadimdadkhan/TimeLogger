@@ -1,6 +1,7 @@
 ﻿using Common.ResponseModels;
 using Microsoft.Extensions.DependencyInjection;
 using Model.Interface;
+using Model.ModelSql;
 using Service.Interface;
 using Service.Service;
 using System;
@@ -35,14 +36,20 @@ namespace TimeLoggerView
             // Initialize the ViewModel with the service
             DataContext = new LoginWindowViewModel(_authenticationService);
         }
+        
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
            Response response =  _authenticationService.Login(txtUser.Text,txtPass.Password);
 
+
+            User user = (User)response.Data;
+          
+
+
             if (response != null)
             {
-                MainDashboardView mainDashboard = new MainDashboardView();
+                MainDashboardView mainDashboard = new MainDashboardView(user);
                 mainDashboard.Show();
                 this.Close();
             }
@@ -50,11 +57,11 @@ namespace TimeLoggerView
             {
                 MessageBox.Show("Incorrect Password or Username");
             }
-
-            
-            
             
         }
+
+
+      
 
         private void ResetTxt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

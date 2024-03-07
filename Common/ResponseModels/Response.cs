@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Common.ResponseModels
 {
     public class Response
@@ -12,5 +13,6 @@ namespace Common.ResponseModels
         public string Message { get; set; }
         public ResponseStatus Status { get; set; }
         public object Data { get; set; }
+        
     }
 }

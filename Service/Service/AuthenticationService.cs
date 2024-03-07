@@ -25,6 +25,7 @@ namespace Service.Service
             Response response = null;
 
             User user = _iRepository.GetQueryableWithOutTracking<User>().Where(x => x.Username.Equals(username) && x.Password.Equals(password)).FirstOrDefault();
+            
             if (user != null)
             {
                 response = new Response()
@@ -38,5 +39,9 @@ namespace Service.Service
             }
             return response;
         }
+
+
+        
+        
     }
 }
