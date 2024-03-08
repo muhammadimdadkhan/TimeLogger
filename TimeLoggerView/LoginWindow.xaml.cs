@@ -36,15 +36,34 @@ namespace TimeLoggerView
             // Initialize the ViewModel with the service
             DataContext = new LoginWindowViewModel(_authenticationService);
         }
-        
+
+        private void PasswordBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Perform login action here
+                // For example, you might call a method to handle the login process
+                // Replace LoginMethod() with your actual login method
+                LoginMethod();
+                
+            }
+        }
+
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-           Response response =  _authenticationService.Login(txtUser.Text,txtPass.Password);
+            LoginMethod();
+            
+        }
+
+
+        private void LoginMethod()
+        {
+            Response response = _authenticationService.Login(txtUser.Text, txtPass.Password);
 
 
             User user = (User)response.Data;
-          
+
 
 
             if (response != null)
@@ -57,7 +76,6 @@ namespace TimeLoggerView
             {
                 MessageBox.Show("Incorrect Password or Username");
             }
-            
         }
 
 

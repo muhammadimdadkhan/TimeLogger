@@ -102,7 +102,9 @@
                          Height="28"
                          VerticalContentAlignment="Center"
                          Margin="0,5,0,0"
-                         Padding="20,0,0,0">
+                         Padding="20,0,0,0"
+                         PreviewKeyDown="PasswordBox_PreviewKeyDown">
+                            
 
                     <PasswordBox.Background>
                         <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\key-icon.png"

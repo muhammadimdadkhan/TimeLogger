@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Time Logger" Height="844" Width="1280" SizeToContent="Height" >
 
-    <Grid Background="#FF1D203E" Height="800" Width="1280" HorizontalAlignment="Center" VerticalAlignment="Center" >
+    <Grid Background="#FF1D203E" Height="844" Width="1280" HorizontalAlignment="Center" VerticalAlignment="Center" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -35,14 +35,12 @@
         </Button>
         <Label Content="Time Logged" HorizontalAlignment="Left" Margin="980,319,0,0" VerticalAlignment="Top" Foreground="#FF8F909A" FontSize="15"/>
         <Label Content="see all" HorizontalAlignment="Left" Margin="1219,319,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="15" Cursor="Hand"/>
-        <Rectangle HorizontalAlignment="Left" Height="200" Margin="370,68,0,0" VerticalAlignment="Top" Width="200" Fill="#FF929090"/>
-        <TextBlock  HorizontalAlignment="Right" Margin="0,386,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="289" Text="" Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
+        <TextBlock x:Name="dateofFirstIterationTextBlock" HorizontalAlignment="Right" Margin="0,386,15,0" TextWrapping="Wrap" 
+           VerticalAlignment="Top" Height="50" Width="289" Text="{Binding DateOfFirstIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" 
+           Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}"/>
             </TextBlock.Style>
-
-
-
         </TextBlock>
         <Label x:Name="totalHoursFirstIterationLabel" 
        Content="{Binding TotalHoursFirstIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}"
@@ -52,7 +50,9 @@
        Foreground="#FF616376" 
        FontSize="10" 
        Cursor="Hand"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,461,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="289" Text="Yesterday" Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
+        <TextBlock x:Name="dateofSecondIterationTextBlock" HorizontalAlignment="Right" Margin="0,461,15,0" TextWrapping="Wrap" 
+                   VerticalAlignment="Top" Height="50" Width="289" Text="{Binding DateOfSecondIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" Foreground="White" 
+                   FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}"/>
             </TextBlock.Style>
@@ -61,7 +61,9 @@
 
         </TextBlock>
         <Label x:Name="totalHoursSecondIteration" Content="{Binding TotalHoursSecondIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" HorizontalAlignment="Left" Margin="985,488,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="10" Cursor="Hand"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,540,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="289" Text="Februrary 25" Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
+        <TextBlock x:Name="dateofThirdIterationTextBlock" HorizontalAlignment="Right" Margin="0,540,15,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                   Height="50" Width="289" Text="{Binding DateOfThirdIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" Foreground="White" FontSize="20" Cursor="Hand" 
+                   Padding="11,3,0,0" Background="#FF393D5D">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}"/>
             </TextBlock.Style>
@@ -70,7 +72,8 @@
 
         </TextBlock>
         <Label x:Name="totalHoursThirdIteration" Content="{Binding TotalHoursThirdIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" HorizontalAlignment="Left" Margin="985,567,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="10" Cursor="Hand"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,618,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="289" Text="Februrary 26" Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
+        <TextBlock x:Name="dateofFourthIterationTextBlock" HorizontalAlignment="Right" Margin="0,618,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="289" 
+                   Text="{Binding DateOfFourthIteration , RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}"/>
             </TextBlock.Style>
@@ -79,84 +82,6 @@
 
         </TextBlock>
         <Label x:Name="totalHoursFourthIteration" Content="{Binding TotalHoursFourthIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" HorizontalAlignment="Left" Margin="985,645,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="10" Cursor="Hand"/>
-        <Button x:Name="btnSave"                          
-            BorderThickness="0"
-            Content="Save"
-            Foreground="White"
-            FontSize="12"
-            FontFamily="Montserrat"
-            Cursor="Hand"
-            Click="btnLogin_Click" Margin="709,0,0,197" HorizontalAlignment="Left" Width="214" RenderTransformOrigin="0.5,0.5" Height="30" VerticalAlignment="Bottom">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="1.455"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0.508"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#462AD8"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#28AEED"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="150" Height="30"
-                        CornerRadius="20"
-                        Background="{TemplateBinding Background}">
-                        <ContentPresenter VerticalAlignment="Center"
-                            HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="btnUploadImage"                          
-            BorderThickness="0"
-            Content="Uplaod Image"
-            Foreground="White"
-            FontSize="12"
-            FontFamily="Montserrat"
-            Cursor="Hand"
-            Click="btnLogin_Click" Margin="363,0,0,525" HorizontalAlignment="Left" Width="214" RenderTransformOrigin="0.5,0.5" Height="30" VerticalAlignment="Bottom">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="1.455"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0.508"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#462AD8"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#28AEED"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="150" Height="30"
-                        CornerRadius="20"
-                        Background="{TemplateBinding Background}">
-                        <ContentPresenter VerticalAlignment="Center"
-                            HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
         <StackPanel HorizontalAlignment="Left" Height="757" Margin="0,10,0,0" VerticalAlignment="Top" Width="320"/>
 
         <Button Name="btnHome" Content="Home" Width="287"
@@ -386,11 +311,10 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-
-
-
         
-        <StackPanel/>
+
+
+
 
 
 
