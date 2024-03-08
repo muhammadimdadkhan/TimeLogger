@@ -1,0 +1,327 @@
+﻿<Window x:Class="TimeLoggerView.MainDashboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStartupLocation="CenterScreen"
+        
+        xmlns:local="clr-namespace:TimeLoggerView"
+        mc:Ignorable="d"
+        Title="Time Logger" Height="844" Width="1280" SizeToContent="Height" >
+
+    <Grid Background="#FF1D203E" Height="844" Width="1280" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Left" Height="828" VerticalAlignment="Center" Width="320" Fill="#FF242743" OpacityMask="Black"/>
+        <Rectangle Height="828" Width="320" Fill="#FF2C2F48" Opacity="0.5" Margin="960,0,0,0"/>
+        <Ellipse Height="117" Margin="1062,68,102,659" Stroke="Black" Width="117">
+            <Ellipse.Fill>
+                <ImageBrush/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Label Content="Imdad Khan" HorizontalAlignment="Left" Margin="1044,234,0,0" VerticalAlignment="Top" Foreground="#FFFFFDFD" FontSize="25" FontWeight="Bold"/>
+        <Label Content="@Imdad.Khan" HorizontalAlignment="Left" Margin="1068,276,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="15"/>
+        <Button HorizontalAlignment="Left" Height="22" Margin="960,21,0,0" VerticalAlignment="Top" Width="320" BorderBrush="#FF7E8095" Cursor="Hand">
+            <Button.Background>
+                <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\icons8-bell-100.png" Stretch="Uniform"/>
+            </Button.Background>
+
+        </Button>
+        <Label Content="Time Logged" HorizontalAlignment="Left" Margin="980,319,0,0" VerticalAlignment="Top" Foreground="#FF8F909A" FontSize="15"/>
+        <Label Content="see all" HorizontalAlignment="Left" Margin="1219,319,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="15" Cursor="Hand"/>
+        <TextBlock x:Name="dateofFirstIterationTextBlock" HorizontalAlignment="Right" Margin="0,386,15,0" TextWrapping="Wrap" 
+           VerticalAlignment="Top" Height="50" Width="289" Text="{Binding DateOfFirstIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" 
+           Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}"/>
+            </TextBlock.Style>
+        </TextBlock>
+        <Label x:Name="totalHoursFirstIterationLabel" 
+       Content="{Binding TotalHoursFirstIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}"
+       HorizontalAlignment="Left" 
+       Margin="985,413,0,0" 
+       VerticalAlignment="Top" 
+       Foreground="#FF616376" 
+       FontSize="10" 
+       Cursor="Hand"/>
+        <TextBlock x:Name="dateofSecondIterationTextBlock" HorizontalAlignment="Right" Margin="0,461,15,0" TextWrapping="Wrap" 
+                   VerticalAlignment="Top" Height="50" Width="289" Text="{Binding DateOfSecondIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" Foreground="White" 
+                   FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}"/>
+            </TextBlock.Style>
+
+
+
+        </TextBlock>
+        <Label x:Name="totalHoursSecondIteration" Content="{Binding TotalHoursSecondIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" HorizontalAlignment="Left" Margin="985,488,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="10" Cursor="Hand"/>
+        <TextBlock x:Name="dateofThirdIterationTextBlock" HorizontalAlignment="Right" Margin="0,540,15,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                   Height="50" Width="289" Text="{Binding DateOfThirdIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" Foreground="White" FontSize="20" Cursor="Hand" 
+                   Padding="11,3,0,0" Background="#FF393D5D">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}"/>
+            </TextBlock.Style>
+
+
+
+        </TextBlock>
+        <Label x:Name="totalHoursThirdIteration" Content="{Binding TotalHoursThirdIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" HorizontalAlignment="Left" Margin="985,567,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="10" Cursor="Hand"/>
+        <TextBlock x:Name="dateofFourthIterationTextBlock" HorizontalAlignment="Right" Margin="0,618,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="289" 
+                   Text="{Binding DateOfFourthIteration , RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" Foreground="White" FontSize="20" Cursor="Hand" Padding="11,3,0,0" Background="#FF393D5D">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}"/>
+            </TextBlock.Style>
+
+
+
+        </TextBlock>
+        <Label x:Name="totalHoursFourthIteration" Content="{Binding TotalHoursFourthIteration, RelativeSource={RelativeSource AncestorType={x:Type local:MainDashboardView}}}" HorizontalAlignment="Left" Margin="985,645,0,0" VerticalAlignment="Top" Foreground="#FF616376" FontSize="10" Cursor="Hand"/>
+        <StackPanel HorizontalAlignment="Left" Height="757" Margin="0,10,0,0" VerticalAlignment="Top" Width="320"/>
+
+        <Button Name="btnHome" Content="Home" Width="287"
+                HorizontalAlignment="Left" Margin="20,74,0,732" BorderBrush="#FF464271" 
+                Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btn_Home_Click" OpacityMask="Black" 
+                 Padding="20,1,1,1" Cursor="Hand" Background="#FF383275">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Ellipse HorizontalAlignment="Left" Height="20" Width="20" Margin="88,83,0,0" VerticalAlignment="Top"  Cursor="Hand" RenderTransformOrigin="0.527,0.141">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Home.png" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Button x:Name="btn_User" Content="User" Width="287"
+            HorizontalAlignment="Left" Margin="20,127,0,679" BorderBrush="#FF464271" 
+            Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btn_User_Click" OpacityMask="Black" 
+            Padding="20,1,1,1" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btn_TimeLogs" Content="Time logs" Width="287"
+            HorizontalAlignment="Left" Margin="20,177,0,629" BorderBrush="#FF464271" 
+            Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btn_TimeLogs_Click" OpacityMask="Black" 
+            Padding="70,1,1,1" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btn_Projects" Content="Projects" Width="287"
+            HorizontalAlignment="Left" Margin="20,230,0,576" BorderBrush="#FF464271" 
+            Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btn_Projects_Click" OpacityMask="Black" 
+            Padding="20,1,1,1" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btn_Requests" Content="Requests" Width="287"
+            HorizontalAlignment="Left" Margin="20,284,0,522" BorderBrush="#FF464271" 
+            Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btn_Requests_Click" OpacityMask="Black" 
+            Padding="20,1,1,1" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btn_Audit" Content="Audit" Width="287"
+            HorizontalAlignment="Left" Margin="20,337,0,469" BorderBrush="#FF464271" 
+            Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btn_Audit_Click" OpacityMask="Black" 
+            Padding="20,1,1,1" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btn_Reports" Content="Reports" Width="287"
+            HorizontalAlignment="Left" Margin="20,387,0,419" BorderBrush="#FF464271" 
+            Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btn_Reports_Click" OpacityMask="Black" 
+            Padding="20,1,1,1" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Ellipse HorizontalAlignment="Left" Height="20" Margin="88,136,0,0" VerticalAlignment="Top" Width="20" Cursor="Hand">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\icons8-user-100.png" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse HorizontalAlignment="Left" Height="20" Margin="88,239,0,0" VerticalAlignment="Top" Width="20" Cursor="Hand">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\icons8-project-96.png" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse HorizontalAlignment="Left" Height="20" Margin="88,293,0,0" VerticalAlignment="Top" Width="20" Cursor="Hand">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\icons8-request-service-96.png" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse HorizontalAlignment="Left" Height="20" Margin="88,346,0,0" VerticalAlignment="Top" Width="20" Cursor="Hand">
+            <Ellipse.Fill>
+                <ImageBrush Stretch="Fill" ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\icons8-audit-100.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse HorizontalAlignment="Left" Height="20" Margin="88,396,0,0" VerticalAlignment="Top" Width="20" Cursor="Hand">
+            <Ellipse.Fill>
+                <ImageBrush Stretch="Fill" ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\icons8-report-90.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse HorizontalAlignment="Left" Height="20" Margin="88,186,0,0" VerticalAlignment="Top" Width="20" Cursor="Hand" RenderTransformOrigin="0.59,0.531">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\icons8-time-100.png" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Button x:Name="btnSignOut" Content="Sign Out" Width="287"
+            HorizontalAlignment="Left" Margin="20,705,0,101" BorderBrush="#FF464271" 
+            Foreground="#FFDADADA" FontSize="20" FontWeight="Bold" Click="btnLogin_Click" OpacityMask="Black" 
+            Padding="20,1,1,1" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2c2f48"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF1D203E"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        
+
+
+
+
+
+
+
+
+
+    </Grid>
+    
+
+</Window>

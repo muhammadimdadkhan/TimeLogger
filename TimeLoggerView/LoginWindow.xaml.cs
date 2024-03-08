@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Common.ResponseModels;
+using Microsoft.Extensions.DependencyInjection;
 using Model.Interface;
+using Model.ModelSql;
 using Service.Interface;
 using Service.Service;
 using System;
@@ -35,10 +37,49 @@ namespace TimeLoggerView
             DataContext = new LoginWindowViewModel(_authenticationService);
         }
 
+        private void PasswordBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Perform login action here
+                // For example, you might call a method to handle the login process
+                // Replace LoginMethod() with your actual login method
+                LoginMethod();
+                
+            }
+        }
+
+
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            _authenticationService.Login(txtUser.Text,txtPass.Password);
+            LoginMethod();
+            
         }
+
+
+        private void LoginMethod()
+        {
+            Response response = _authenticationService.Login(txtUser.Text, txtPass.Password);
+
+
+            User user = (User)response.Data;
+
+
+
+            if (response != null)
+            {
+                MainDashboardView mainDashboard = new MainDashboardView(user);
+                mainDashboard.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect Password or Username");
+            }
+        }
+
+
+      
 
         private void ResetTxt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
