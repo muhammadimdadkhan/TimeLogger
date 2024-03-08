@@ -3,6 +3,7 @@ using Common.ResponseModels;
 using Model.Interface;
 using Model.ModelSql;
 using Service.Interface;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +30,13 @@ namespace Service.Service
             {
                 response = new Response()
                 {
-                    Data = user,
-                    Message = "Success",
-                    Status = ResponseStatus.Success
+                Data = user,
+                Message = "Success",
+                Status = ResponseStatus.Success,
                 };
                 response.Data = user;
-
             }
+            
             return response;
         }
     }
