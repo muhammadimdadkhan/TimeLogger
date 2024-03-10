@@ -1,4 +1,7 @@
-﻿using Model.ModelSql;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Model.ModelSql;
+using Service.Interface;
+using Service.Service;
 using Session;
 using System;
 using System.Collections.Generic;
@@ -14,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TimeLoggerView.ViewModels;
 
 namespace TimeLoggerView.View
 {
@@ -22,9 +26,18 @@ namespace TimeLoggerView.View
     /// </summary>
     public partial class UsersView : UserControl
     {
+        IUserService _userService { get; set; }
+
+        // Resolve the service from App's ServiceProvider
         public UsersView()
         {
             InitializeComponent();
+
+            _userService = ((App)Application.Current).ServiceProvider.GetService<IUserService>();
+
+            // Initialize the ViewModel with the service
+            DataContext = new UsersVM(_userService);
+
             List<User> users = new List<User>()
             {
                 SessionDetails.loggedInUser
