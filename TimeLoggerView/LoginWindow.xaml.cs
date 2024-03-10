@@ -37,7 +37,10 @@ namespace TimeLoggerView
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            UserDashboard dashboard = new UserDashboard();
             _authenticationService.Login(txtUser.Text,txtPass.Password);
+            dashboard.Show();
+            this.Close();
         }
 
         private void ResetTxt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
