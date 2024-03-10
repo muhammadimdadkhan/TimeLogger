@@ -1,7 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Common.Enums;
+using Common.ResponseModels;
+using Microsoft.Extensions.DependencyInjection;
 using Model.Interface;
 using Service.Interface;
 using Service.Service;
+using Session;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +40,18 @@ namespace TimeLoggerView
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            _authenticationService.Login(txtUser.Text,txtPass.Password);
+           Response response=  _authenticationService.Login(txtUser.Text,txtPass.Password);
+            if (response.Status.Equals(ResponseStatus.Success))
+            {
+                SessionDetails.loggedInUser = (Model.ModelSql.User)response.Data;
+                UserWindow userWindow = new UserWindow();
+                userWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
+            }
         }
 
         private void ResetTxt_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

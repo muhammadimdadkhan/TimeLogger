@@ -5,11 +5,13 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLoggerView", "TimeLoggerView\TimeLoggerView.csproj", "{E7746840-B43D-40F4-944A-2B58ADE18DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{2E5CE6D4-E8F1-4287-9B4B-E04DB41863EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{2E5CE6D4-E8F1-4287-9B4B-E04DB41863EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{B577C528-9DE1-4BAB-B0EF-DDFD3B5310BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{B577C528-9DE1-4BAB-B0EF-DDFD3B5310BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B10E0910-9DF1-4B6C-9877-CDFD2C77E2F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{B10E0910-9DF1-4B6C-9877-CDFD2C77E2F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session", "Session\Session.csproj", "{8833244B-9568-4615-B2CD-5593E6019928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B10E0910-9DF1-4B6C-9877-CDFD2C77E2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B10E0910-9DF1-4B6C-9877-CDFD2C77E2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B10E0910-9DF1-4B6C-9877-CDFD2C77E2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8833244B-9568-4615-B2CD-5593E6019928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8833244B-9568-4615-B2CD-5593E6019928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8833244B-9568-4615-B2CD-5593E6019928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8833244B-9568-4615-B2CD-5593E6019928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using Common.Enums;
+using Common.Messages;
 using Common.ResponseModels;
 using Model.Interface;
 using Model.ModelSql;
@@ -30,11 +31,17 @@ namespace Service.Service
                 response = new Response()
                 {
                     Data = user,
-                    Message = "Success",
+                    Message = ResponseMessage.DefaultMessage[ResponseStatus.Success],
                     Status = ResponseStatus.Success
                 };
-                response.Data = user;
-
+            }
+            else
+            {
+                response = new Response()
+                {
+                    Message = ResponseMessage.DefaultMessage[ResponseStatus.AuthenticationFailed],
+                    Status = ResponseStatus.AuthenticationFailed
+                };
             }
             return response;
         }
