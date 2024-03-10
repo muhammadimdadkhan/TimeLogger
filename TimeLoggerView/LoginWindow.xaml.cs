@@ -44,7 +44,7 @@ namespace TimeLoggerView
             if (response.Status.Equals(ResponseStatus.Success))
             {
                 SessionDetails.loggedInUser = (Model.ModelSql.User)response.Data;
-                UserWindow userWindow = new UserWindow();
+                MainWindow userWindow = new MainWindow();
                 userWindow.Show();
                 this.Close();
             }
