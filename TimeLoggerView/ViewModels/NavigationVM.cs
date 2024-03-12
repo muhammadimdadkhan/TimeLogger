@@ -14,6 +14,9 @@ namespace TimeLoggerView.ViewModels
     class NavigationVM : ViewModelBase
     {
         IUserService _userService;
+        ITimeLogService _timeLogService;
+        IProjectService _projectService;
+        IRequestService _requestService;
 
         private object _currentView;
         public object CurrentView
@@ -28,13 +31,16 @@ namespace TimeLoggerView.ViewModels
         public ICommand RequestCommand { get; set; }
 
         private void User(object obj) => CurrentView = new UsersVM(_userService);
-        private void TimeLog(object obj) => CurrentView = new TimeLogsVM();
-        private void Project(object obj) => CurrentView = new ProjectsVM();
-        private void Request(object obj) => CurrentView = new RequestsVM();
+        private void TimeLog(object obj) => CurrentView = new TimeLogsVM(_timeLogService);
+        private void Project(object obj) => CurrentView = new ProjectsVM(_projectService);
+        private void Request(object obj) => CurrentView = new RequestsVM(_requestService);
 
         public NavigationVM()
         {
             _userService = ((App)Application.Current).ServiceProvider.GetService<IUserService>();
+            _timeLogService = ((App)Application.Current).ServiceProvider.GetService<ITimeLogService>();
+            _requestService = ((App)Application.Current).ServiceProvider.GetService<IRequestService>();
+            _projectService = ((App)Application.Current).ServiceProvider.GetService<IProjectService>();
 
             UserCommand = new RelayCommand(User);
             TimeLogCommand = new RelayCommand(TimeLog);
