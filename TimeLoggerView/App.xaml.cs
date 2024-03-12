@@ -38,6 +38,9 @@ namespace TimeLoggerView
             services.AddScoped<IRepository, EntityFrameworkRepository>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITimeLogService, TimeLogService>();
+            services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<IRequestService, RequestService>();
 
             // Build service provider
             ServiceProvider = services.BuildServiceProvider();
