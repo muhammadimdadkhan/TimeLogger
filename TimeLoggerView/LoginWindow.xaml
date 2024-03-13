@@ -8,7 +8,7 @@
         Title="Login" Height="550" Width="800"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-         Icon ="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Logo.png"
+         Icon ="D:\TimeLogger-Sprint-2\TimeLogger-Sprint-2\TimeLoggerView\Images\Logo.png"
         >
 
 
@@ -43,7 +43,7 @@
                         Orientation="Vertical"
                         Margin="0,35,0,0">
 
-                <Image Source="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
+                <Image Source="D:\TimeLogger-Sprint-2\TimeLogger-Sprint-2\TimeLoggerView\Images\Logo-Vertical.png"
                        Width="150" Height="150"/>
 
                 <TextBlock Text="Time Logger"
@@ -77,7 +77,7 @@
                          Padding="20,0,0,0">
 
                     <TextBox.Background>
-                        <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\user-icon.png"
+                        <ImageBrush ImageSource="D:\TimeLogger-Sprint-2\TimeLogger-Sprint-2\TimeLoggerView\Images\user-icon.png"
                                 
                                     Stretch="None"
                                     AlignmentX="Left"/>
@@ -105,7 +105,7 @@
                          Padding="20,0,0,0">
 
                     <PasswordBox.Background>
-                        <ImageBrush ImageSource="E:\petrochameical\TimeLogger\TimeLoggerView\Images\key-icon.png"
+                        <ImageBrush ImageSource="D:\TimeLogger-Sprint-2\TimeLogger-Sprint-2\TimeLoggerView\Images\key-icon.png"
                                     Stretch="None"
                                     AlignmentX="Left"/>
                     </PasswordBox.Background>
