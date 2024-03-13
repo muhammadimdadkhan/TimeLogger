@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace TimeLoggerView.Windows
 {
     /// <summary>
-    /// Interaction logic for EditRequest.xaml
+    /// Interaction logic for EditRequestForm.xaml
     /// </summary>
-    public partial class EditRequest : Window
+    public partial class EditRequestForm : Window
     {
-        public EditRequest()
+        public EditRequestForm()
         {
             InitializeComponent();
         }
