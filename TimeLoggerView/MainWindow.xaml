@@ -35,7 +35,7 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="228" />
-                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <!--// Navigation Panel //-->
@@ -124,13 +124,11 @@ Command="{Binding TimeLogCommand}">
 
             </Grid>
 
-            <Grid Grid.Column="1" MinWidth="400" MaxWidth="1600" Width="auto">
+            <Grid Grid.Column="1" MinWidth="400" MaxWidth="1600" HorizontalAlignment="Stretch">
 
-                <ContentControl x:Name="Pages"
-                                Content="{Binding CurrentView}" />
+                <ContentControl x:Name="Pages" Content="{Binding CurrentView}" />
 
             </Grid>
-
         </Grid>
 
 

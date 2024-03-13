@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Common.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using Model.ModelSql;
 using Service.Interface;
 using Service.Service;
@@ -18,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TimeLoggerView.ViewModels;
+using TimeLoggerView.Windows;
 
 namespace TimeLoggerView.View
 {
@@ -38,16 +40,19 @@ namespace TimeLoggerView.View
             // Initialize the ViewModel with the service
             DataContext = new UsersVM(_userService);
 
-            List<User> users = new List<User>()
-            {
-                SessionDetails.loggedInUser
-            };
+            //List<User> users = new List<User>()
+            //{
+            //    SessionDetails.loggedInUser
+            //};
+            List<UserGridVM> users = _userService.GetUsers(0, 100).ToList();
             UserGrid.ItemsSource = users;
         }
         // Event handler for add button
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             // Handle add button click
+            AddUserForm userForm = new AddUserForm();
+            userForm.Show();
         }
 
         // Event handler for edit button
