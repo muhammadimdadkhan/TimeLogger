@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TimeLoggerView.ViewModels;
+using TimeLoggerView.Windows;
 
 namespace TimeLoggerView.View
 {
@@ -48,12 +49,17 @@ namespace TimeLoggerView.View
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             // Handle add button click
+            AddProjectForm projectWindow = new AddProjectForm();
+            projectWindow.Show();
+         
         }
 
         // Event handler for edit button
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             // Handle edit button click
+            AddProjectForm projectWindow = new AddProjectForm();
+            projectWindow.Show();
         }
 
         // Event handler for delete button

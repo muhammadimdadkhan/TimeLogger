@@ -1,0 +1,233 @@
+﻿<Window x:Class="TimeLoggerView.Windows.AddTimeLogForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeLoggerView.Windows"
+        mc:Ignorable="d"
+        Title="AddTimeLogForm" Height="550" Width="800">
+    <Window.Resources>
+        <!-- Dark TextBox Style -->
+        <Style x:Key="DarkTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="#555"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#777"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="#777">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Add TimeLog"
+           Foreground="White"
+           FontSize="20"
+           FontWeight="Medium"
+           FontFamily="Montserrat"
+           HorizontalAlignment="Center"
+           Margin="0,10,0,20"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="User ID"
+                   Foreground="DarkGray"
+                   FontSize="12"
+                   FontWeight="Medium"
+                   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtUserId" 
+                 Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Project ID"
+                   Foreground="DarkGray"
+                   FontSize="12"
+                   FontWeight="Medium"
+                   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtProjectId" 
+                     Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="Start Time"
+   Foreground="DarkGray"
+   FontSize="12"
+   FontWeight="Medium"
+   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtStartTime" 
+ Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="End Time"
+   Foreground="DarkGray"
+   FontSize="12"
+   FontWeight="Medium"
+   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtEndTime" 
+     Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="TimeLog Status"
+  Foreground="DarkGray"
+  FontSize="12"
+  FontWeight="Medium"
+  FontFamily="Montserrat"/>
+                <TextBox x:Name="txtTimeLogStatus" 
+Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Comments"
+  Foreground="DarkGray"
+  FontSize="12"
+  FontWeight="Medium"
+  FontFamily="Montserrat"/>
+                <TextBox x:Name="txtComments" 
+    Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="4">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="Created At"
+                   Foreground="DarkGray"
+                   FontSize="12"
+                   FontWeight="Medium"
+                   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtCreated" 
+                 Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Modified At"
+                   Foreground="DarkGray"
+                   FontSize="12"
+                   FontWeight="Medium"
+                   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtModified" 
+                 Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="Created By"
+                   Foreground="DarkGray"
+                   FontSize="12"
+                   FontWeight="Medium"
+                   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtCreatedBy" 
+                 Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Modified By"
+                   Foreground="DarkGray"
+                   FontSize="12"
+                   FontWeight="Medium"
+                   FontFamily="Montserrat"/>
+                <TextBox x:Name="txtModifiedBy" 
+                 Style="{StaticResource DarkTextBoxStyle}"/>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Row="6">
+
+
+            <CheckBox x:Name="chkIsActive"
+              Margin="20,00,0,0"
+              Width="Auto"
+               Content="Is Active"
+               Foreground="DarkGray"
+               VerticalAlignment="Center"
+               FontSize="16"
+               FontFamily="Montserrat"/>
+
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
+                <Border CornerRadius="10">
+                    <Button x:Name="btnAdd" 
+    Width="100"
+    Height="35"
+    Content="Add"
+    Foreground="White"
+    FontSize="12"
+    FontFamily="Montserrat"
+    Cursor="Hand"                           
+    Background="#462AD8"
+    Margin="10,0,0,0" Click="btnAdd_Click"
+    />
+                </Border>
+                <Button x:Name="btnCancel" 
+        Width="100"
+        Height="35"
+        Content="Cancel"
+        Foreground="White"
+        FontSize="12"
+        FontFamily="Montserrat"
+        Cursor="Hand"                           
+        Background="#462AD8"
+        Margin="10,0,0,0"
+        />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

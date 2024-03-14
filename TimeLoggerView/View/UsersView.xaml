@@ -8,18 +8,11 @@
              d:DesignHeight="600"
              d:DesignWidth="622"
              Style="{StaticResource Page_Style}">
-
     <UserControl.DataContext>
         <vm:UsersVM />
     </UserControl.DataContext>
-    
     <Grid Margin="15">
-
         <DataGrid x:Name="UserGrid" Grid.Row="1" AutoGenerateColumns="False">
-            
-            
-            
-            
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
                 <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
@@ -39,9 +32,5 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-
-
-     
-
     </Grid>
 </UserControl>

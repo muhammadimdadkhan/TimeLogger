@@ -58,7 +58,7 @@
 
                         <Grid>
 
-                            <Image Source="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
+                            <Image Source="C:\Users\hp\Source\Repos\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
                                    Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="User"
@@ -75,7 +75,7 @@
 
                         <Grid>
 
-                            <Image Source="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
+                            <Image Source="C:\Users\hp\Source\Repos\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
                     Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="Project"
@@ -94,7 +94,7 @@
 
                         <Grid>
 
-                            <Image Source="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
+                            <Image Source="C:\Users\hp\Source\Repos\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
                     Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="Request"
@@ -111,7 +111,7 @@ Command="{Binding TimeLogCommand}">
 
                         <Grid>
 
-                            <Image Source="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
+                            <Image Source="C:\Users\hp\Source\Repos\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
      Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="TimeLog"

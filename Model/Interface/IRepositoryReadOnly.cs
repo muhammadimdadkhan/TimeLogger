@@ -16,6 +16,6 @@ namespace Model.Interface
         IQueryable<T> GetQueryableWithOutTracking<T>(IList<string> includes = null, Expression<Func<T, bool>> filter = null) where T : class;
         Task<IEnumerable<T>> GetMultipleResultAsync<T>(string[] includes = null) where T : class;
         Task<T> GetModelByIdAsync<T>(int modelId) where T : class;
-        Task<T> GetModelByIdAsync<T>(string modelId) where T : class;
+        Task<T> GetModelByIdAsync<T>(string modelId) where T : class;  
     }
 }
