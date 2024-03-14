@@ -17,6 +17,14 @@ namespace Common.Messages
            {ResponseStatus.None,"" },
        };
 
-
+        public static Dictionary<MessageType, string> Messages = new Dictionary<MessageType, string>() {
+           {MessageType.AddSuccess,"Item added successfully." },
+           {MessageType.AddFailure,"Failed to add item." },
+           {MessageType.EditSuccess,"Item updated successfully." },
+           {MessageType.EditFailure,"Failed to update item." },
+           {MessageType.DeleteSuccess,"Item deleted successfully." },
+           {MessageType.DeleteFailure,"Failed to delete item." },
+           {MessageType.None,"" },
+       };
     }
 }
