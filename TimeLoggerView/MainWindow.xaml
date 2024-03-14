@@ -49,7 +49,7 @@
                 <StackPanel Height="400"
                             Width="228">
 
-                   
+
 
                     <!--// User //-->
 
@@ -107,15 +107,15 @@
                     <!--// TimeLog //-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
-Command="{Binding TimeLogCommand}">
+                        Command="{Binding TimeLogCommand}">
 
                         <Grid>
 
                             <Image Source="E:\petrochameical\TimeLogger\TimeLoggerView\Images\Logo-Vertical.png"
-     Style="{StaticResource Image_Style}" />
+                                Style="{StaticResource Image_Style}" />
 
                             <TextBlock Text="TimeLog"
-         Style="{StaticResource Text_Style}" />
+                                 Style="{StaticResource Text_Style}" Margin="70,14,0,0" VerticalAlignment="Top" />
 
                         </Grid>
 

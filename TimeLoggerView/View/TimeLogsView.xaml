@@ -12,8 +12,121 @@
     <UserControl.DataContext>
         <vm:TimeLogsVM />
     </UserControl.DataContext>
-    
-    <Grid>
-            
+
+    <UserControl.Resources>
+        <!-- Dark TextBox Style -->
+        <Style x:Key="DarkTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="#555"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#777"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"  >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition MaxWidth="200"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="Add" Grid.Column="0" Grid.Row="1"                          
+     BorderThickness="0"
+     Content="Add"
+     Foreground="White"
+     FontSize="12"
+     FontFamily="Montserrat"
+     Cursor="Hand"                           
+     Margin="0,0,0,20"
+     Click="AddButton_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="50" Height="30"
+                 CornerRadius="10"
+                 Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <TextBlock Text="Search" Grid.Column="2" Grid.Row="0"
+                Foreground="DarkGray"
+                FontSize="12"
+                FontWeight="Medium"
+                FontFamily="Montserrat"/>
+                <TextBox x:Name="txtSearch"  Grid.Column="2" Grid.Row="1" Height="30"
+              Style="{StaticResource DarkTextBoxStyle}"/>
+
+            </Grid>
+        </StackPanel>
+
+
+        <DataGrid x:Name="TimeLogsGrid"  Grid.Row="2" AutoGenerateColumns="False">
+
+
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="User ID" Binding="{Binding UserId}"/>
+                <DataGridTextColumn Header="Project ID" Binding="{Binding ProjectId}"/>
+                <DataGridTextColumn Header="Start Time" Binding="{Binding StartTime}"/>
+                <DataGridTextColumn Header="End Time" Binding="{Binding EndTime}"/>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Click="EditButton_Click"/>
+                                <Button Content="Delete" Click="DeleteButton_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
     </Grid>
 </UserControl>
