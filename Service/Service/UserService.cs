@@ -50,5 +50,21 @@ namespace Service.Service
                 .FirstOrDefault();
             return response;
         }
+
+        public bool AddUser(User user)
+        {
+            _repository.InsertModel(user);
+            return _repository.Save()>0;
+        }
+
+        public List<DropdownModel> GetRolesForDropdown()
+        {
+          return  _repository.GetQueryableWithOutTracking<Role>().Where(x=>x.IsActive.Equals(true))
+                .Select(x=>new DropdownModel
+                {
+                    Id=x.Id,
+                    Name=x.Name,
+                }).ToList();
+        }
     }
 }
