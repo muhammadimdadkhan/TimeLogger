@@ -20,6 +20,7 @@ namespace Model.ModelSql
         public string? LastName { get; set; }
         public string? Designation { get; set; }
         public string Email { get; set; }
+        public string? UserType { get; set; }
 
         // Navigation property
         [ForeignKey("RoleID")]

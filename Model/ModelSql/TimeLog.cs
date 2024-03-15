@@ -11,7 +11,7 @@ using Model.EntityModel;
 namespace Model.ModelSql
 {
     // TimeLog entity model
-    public class TimeLog: BasicEntity
+    public class TimeLog : BasicEntity
     {
         public int UserID { get; set; }
         public int ProjectID { get; set; }
@@ -19,6 +19,9 @@ namespace Model.ModelSql
         public DateTime? EndTime { get; set; }
         public TimeLogStatus? TimeLogStatus { get; set; }
         public string? Comment { get; set; }
+        public string? ERFNumber { get; set; }
+        public string? DeliverableType { get; set; }
+        public string? DrawingNumber { get; set; }
 
         // Navigation properties
         [ForeignKey("UserID")]
